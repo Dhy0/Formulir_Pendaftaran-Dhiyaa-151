@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Pendaftaran Pengguna</title>
+    <link rel="icon" href="./Asstes/Logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <h1>Formulir Pendaftaran</h1>
+        <p>By Dhiyaa Sheva Virgiany Hermans</p>
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+          <div class="progress" id="validationProgress"></div>
+        </div>
+
+        <form id="registrationForm" novalidate>
+          <!-- Username Salah -->
+          <div class="form-group">
+            <label for="username">Username</label>
+            <div class="input-group">
+              <span class="input-icon">
+                <i class="fas fa-user"></i>
+              </span>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                required
+                minlength="5"
+                maxlength="20"
+                pattern="^[a-zA-Z0-9_]+$"
+              />
+            </div>
+            <div class="requirements">
+              <p data-requirement="length" class="requirement">
+                <i class="fas fa-circle"></i> 5-20 karakter
+              </p>
+              <p data-requirement="pattern" class="requirement">
+                <i class="fas fa-circle"></i> Hanya huruf, angka, dan underscore
+              </p>
+            </div>
+            <div class="validation-message" id="usernameError"></div>
+          </div>
+
+          <!-- Email Salah -->
+          <div class="form-group">
+            <label for="email">Email</label>
+            <div class="input-group">
+              <span class="input-icon">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="validation-message" id="emailError"></div>
+          </div>
+
+          <!-- Password Salah -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-group">
+              <span class="input-icon">
+                <i class="fas fa-lock"></i>
+              </span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                minlength="8"
+              />
+              <button type="button" id="togglePassword" class="toggle-password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="requirements">
+              <p data-requirement="length" class="requirement">
+                <i class="fas fa-circle"></i> Minimal 8 karakter
+              </p>
+              <p data-requirement="number" class="requirement">
+                <i class="fas fa-circle"></i> Minimal 1 angka
+              </p>
+              <p data-requirement="lowercase" class="requirement">
+                <i class="fas fa-circle"></i> Minimal 1 huruf kecil
+              </p>
+              <p data-requirement="uppercase" class="requirement">
+                <i class="fas fa-circle"></i> Minimal 1 huruf besar
+              </p>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar">
+                <div class="strength-indicator" id="strengthIndicator"></div>
+              </div>
+              <span id="strengthText">Kekuatan Password</span>
+            </div>
+          </div>
+
+          <!-- Confirm Password Salah -->
+          <div class="form-group">
+            <label for="confirmPassword">Konfirmasi Password</label>
+            <div class="input-group">
+              <span class="input-icon">
+                <i class="fas fa-lock"></i>
+              </span>
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                required
+              />
+              <button
+                type="button"
+                id="toggleConfirmPassword"
+                class="toggle-password"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="validation-message" id="confirmPasswordError"></div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="submit-btn" disabled>
+            Daftar
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

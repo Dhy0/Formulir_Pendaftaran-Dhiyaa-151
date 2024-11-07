@@ -1,0 +1,254 @@
+/* styles.css */
+:root {
+  --primary-color: #2196f3;
+  --success-color: #4caf50;
+  --warning-color: #ffc107;
+  --danger-color: #f44336;
+  --gray-light: #f5f5f5;
+  --gray-medium: #9e9e9e;
+  --white: #ffffff;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.form-container {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+p {
+  text-align: center;
+  color: var(--gray-medium);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+/* Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--gray-light);
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--gray-medium);
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem 2.5rem;
+  border: 2px solid var(--gray-light);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Toggle Password Button */
+.toggle-password {
+  position: absolute;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--gray-medium);
+  cursor: pointer;
+  padding: 0.2rem;
+}
+
+.toggle-password:hover {
+  color: var(--primary-color);
+}
+
+/* Requirements */
+.requirements {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.requirement {
+  color: var(--gray-medium);
+  margin: 0.2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.requirement i {
+  font-size: 0.6rem;
+}
+
+.requirement.valid {
+  color: var(--success-color);
+}
+
+.requirement.valid i {
+  color: var(--success-color);
+}
+
+/* Password Strength */
+.password-strength {
+  margin-top: 1rem;
+}
+
+.strength-bar {
+  height: 4px;
+  background-color: var(--gray-light);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.strength-indicator {
+  height: 100%;
+  width: 0;
+  transition: all 0.3s ease;
+}
+
+#strengthText {
+  font-size: 0.9rem;
+  color: var(--gray-medium);
+}
+
+/* Validation Messages */
+.validation-message {
+  font-size: 0.9rem;
+  color: var(--danger-color);
+  margin-top: 0.5rem;
+  min-height: 20px;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:disabled {
+  background-color: var(--gray-medium);
+  cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled):hover {
+  background-color: #1976d2;
+  transform: translateY(-2px);
+}
+
+/* Strength Colors */
+.strength-weak {
+  background-color: var(--danger-color);
+}
+.strength-medium {
+  background-color: var(--warning-color);
+}
+.strength-strong {
+  background-color: var(--success-color);
+}
+
+/* Animations */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+}
